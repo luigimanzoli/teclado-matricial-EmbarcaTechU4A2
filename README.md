@@ -46,4 +46,5 @@ Desenvolvedores:
 </table>
 
 Demonstração: 
-- Para ver o funcionamento do projeto, acesse o vídeo de demonstração a seguir: 
+- Para ver o funcionamento do projeto, acesse o vídeo de demonstração a seguir:
+- https://youtube.com/shorts/Vzpmgh-eMXE?feature=share
