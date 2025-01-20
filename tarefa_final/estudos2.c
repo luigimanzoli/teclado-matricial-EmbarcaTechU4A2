@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
+#include <string.h>
 
 //define as saidas dos leds e buzzer
 const uint led_pin_green = 11;
@@ -70,21 +71,38 @@ void inicializacao(){
 int main()
 {
 inicializacao();
+char comando[10]; // Array para armazenar a entrada do usuário
 
   while (true) {
-    ligar_verde();
-    desligar_leds();
+        // Solicita que o usuário digite o comando
+        printf("Digite um comando: \n - red \n - green\n - blue\n - white\n - leds_off\n - bip\n");
         
-    ligar_azul();
-    desligar_leds();
+        // Lê a string do terminal serial
+        scanf("%s", comando); // Lê a palavra digitada
 
-    ligar_vermelho();
-    desligar_leds();
-
-    ligar_branco();
-    desligar_leds();
-
-    ativar_buzzer();
-
+        // Exibe o comando digitado no terminal
+        printf("Comando digitado: %s\n", comando);
+     // Verifica o comando e acende o LED correspondente ou liga o buzzer
+     if (strcmp(comando, "red") == 0) {
+          ligar_vermelho();
+     }
+     else if(strcmp(comando, "green") == 0){
+          ligar_verde();
+     }
+     else if(strcmp(comando, "blue") == 0){
+          ligar_azul();
+     }
+     else if (strcmp(comando, "white") == 0){
+         ligar_branco();
+     }
+    else if(strcmp(comando, "leds_off") == 0){
+        desligar_leds();
+    }
+    else if (strcmp(comando, "bip") == 0) {
+    ativar_buzzer();}
+    else {
+            printf("Comando inválido! \n");
+        }
   }
+  return 0;
 }
