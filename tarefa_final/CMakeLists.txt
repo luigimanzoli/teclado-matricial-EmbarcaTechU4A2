@@ -60,3 +60,5 @@ target_link_libraries(estudos2
 
 pico_add_extra_outputs(estudos2)
 
+pico_enable_stdio_usb(estudos2 1) 
+pico_enable_stdio_uart(estudos2 0)  
